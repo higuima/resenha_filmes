@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/semantic/semantic.min.css">
+        <link rel="stylesheet" href="/semantic/main.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        #menu{
+            background-color: #0e3b4f;
+            width: 250px;
+            height: 100%;
+            position: fixed;
+            display: flex;
+            flex-flow: column;
+            text-align: left;
+        }
+        #menu>ul{
+            margin: 200px 5px;
+        }
+        #menu>ul>li{
+            list-style:none;
+            margin: 65px 0px;
+        }
+        #menu>ul>li>a{
+            color: aliceblue;
+            font-family: 'Fjalla One', sans-serif;
+            font-size: 40px;
+            text-decoration:none;
+        }
+        #main_img{
+            position: relative;
+            margin: 0px 0px 0px 250px;
+            opacity: 0.8;
+            width: -webkit-fill-available;
+            border-bottom: solid 10px;
+            border-color: #b5500c;
+        }
+        #logo1{
+            height: 500px;
+            position: relative;
+            margin: -750px 1000px;
+            border-radius: 100px;
+        }
+        #logo2{
+            display: none;
+            position: relative;
+            height: 60px;
+            margin: -850px 1400px;
+        }
+        #logo1:hover{
+            display: none;
+        }
+        #logo1:hover #logo2{
+            display: block;
+        }
+        #portifolio{
+            height: 400px;
+            background-color: #0a1124b4;
+        }
+        .fadeIn {
+            animation: fadeIn 2s linear;
+        }
+        @keyframes fadeIn {
+            from{ opacity: 0;
+            }
+            to{ opacity: 1; 
+            }
+        }
+        #serviços{
+            height: 400px;
+            background-color: #b5500cbd;
+        }
+        #contato{
+            height: 400px;
+            background-color: #e88707b2;
+        }
+        #contato>form{
+            margin: 0px 0px 0px 300px;
+            display: flex;
+            flex-flow: column;
+            text-align: left;
+        }
+    </style>
+    <body>
+        <div id="menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portifolio">Portifólio</a></li>
+                <li><a href="#serviços">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+        <div id="home">
+            <img id="main_img" src="/images/home.jpg">
+            <img class="fadeIn" id="logo1" src="images/logo.jpeg">
+        </div>
+        <div id="logo2">
+            <img src="/images/logo2.jpeg">
+        </div>
+        <div id="portifolio"></div>
+        <div id="serviços"></div>
+        <div id="contato">
+            <form method="post" action="/receber_dados.php">
+                <label>Nome:</label>
+                <input type="text" name="nome" id="nome">
+                <label>Email:</label>
+                <input type="e-mail" name="email" id="email">    
+                <label>Telefone:</label>
+                <input type="text" name="telefone" id="telefone">
+                <label>Comentário:</label>
+                <input type="text" name="comentario" id="comentario">
+                <input type="submit" name="enviar" value="enviar" id="button">
+            </form>
+        </div>
+    </body>
+</html>
